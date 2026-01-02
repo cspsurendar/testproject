@@ -1,1 +1,21 @@
+name: testproject
 
+on: [push]
+
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step One
+        uses: actions/checkout@4
+      - name: Step Two
+        run: env | sort
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Step One
+        uses: actions/checkout@4
+      - name: Step Two
+        run: "Git-ChildItem Env: Sort-Object Name"
