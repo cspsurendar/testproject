@@ -1,26 +1,26 @@
 
-name: first
+name: first                          # The name of the GitHub Actions workflow
 
-on: [push]
+on: [push]                           # Defines the event that triggers the workflow (runs on every push)
 
-jobs:
-  job1:
-    name: First Job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step One
-        uses: actions/checkout@v4
+jobs:                                # Root section that contains all jobs in the workflow
+  job1:                              # Unique identifier for the first job
+    name: First Job                  # Display name of the first job in the GitHub UI
+    runs-on: ubuntu-latest           # Specifies that the job runs on the latest Ubuntu runner
+    steps:                           # Sequence of steps executed in this job
+      - name: Step One               # Human-readable name of the first step
+        uses: actions/checkout@v4    # Checks out the repository so the workflow can access the code
 
-      - name: Step Two
-        run: env | sort
+      - name: Step Two               # Human-readable name of the second step
+        run: env | sort              # Prints all environment variables and sorts them alphabetically
 
-  job2:
-    name: Second Job
-    runs-on: windows-latest
-    steps:
-      - name: Step One
-        uses: actions/checkout@v4
+  job2:                              # Unique identifier for the second job
+    name: Second Job                 # Display name of the second job in the GitHub UI
+    runs-on: windows-latest          # Specifies that the job runs on the latest Windows runner
+    steps:                           # Sequence of steps executed in this job
+      - name: Step One               # Human-readable name of the first step
+        uses: actions/checkout@v4    # Checks out the repository so the workflow can access the code
 
-      - name: Step Two
-        run: "Get-ChildItem Env: | Sort-Object Name"
-        shell: powershell
+      - name: Step Two               # Human-readable name of the second step
+        run: "Get-ChildItem Env: | Sort-Object Name"  # Lists all environment variables and sorts them by name
+        shell: powershell            # Specifies that the command should run using PowerShell
