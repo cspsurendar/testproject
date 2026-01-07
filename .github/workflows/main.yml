@@ -23,4 +23,4 @@ jobs:                                # Root section that contains all jobs in th
 
       - name: Step Two               # Human-readable name of the second step
         run: "Get-ChildItem Env: | Sort-Object Name"  # Lists all environment variables and sorts them by name
-        shell: powershell            # Specifies that the command should run using PowerShell
+        shell: powershell            # Specifies that the command should run using PowerShell 
